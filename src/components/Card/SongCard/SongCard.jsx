@@ -2,6 +2,8 @@ import React from 'react'
 
 export const SongCard = () => {
   return (
-    <div>SongCard</div>
+    <div>
+      <h1>Song Card</h1>
+    </div>
   )
 }
