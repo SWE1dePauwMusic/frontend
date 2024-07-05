@@ -1,6 +1,6 @@
-{
+const response = {
   "name":"Photograph",
-  "popularity":61,
+  "popularity":1668908,
   "id":"6CgNoAbFJ4Q4Id4EjtbXlC",
   "artists":["Boyce Avenue","Bea Miller"],
   "images":[
@@ -10,3 +10,5 @@
   ],
   "duration":260186
 }
+
+export default response;

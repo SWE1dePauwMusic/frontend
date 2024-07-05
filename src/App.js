@@ -1,8 +1,9 @@
-
 import "./App.css";
 import { Navbar } from "./components/Navbar/Navbar";
 import { Sidebar } from "./components/Sidebar/Sidebar";
-import { Home } from "./pages/Home/Home";
+import { CurrentSong } from "./pages/CurrentSong/CurrentSong";
+
+;
 
 function App() {
   return (
@@ -10,7 +11,7 @@ function App() {
       
         <Navbar />
         <Sidebar />
-        <Home />
+        <CurrentSong />
     </div>
   );
 }
