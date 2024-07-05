@@ -8,6 +8,12 @@ import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-d
 import Callback from "./components/Callback";
 import HomeTest from "./components/Home";
 import GoogleLogin from "./components/googleLogin";
+import { Navbar } from "./components/Navbar/Navbar";
+import { Sidebar } from "./components/Sidebar/Sidebar";
+import { CurrentSong } from "./pages/CurrentSong/CurrentSong";
+
+;
+
 function App() {
   return (
       <Router >
@@ -17,6 +23,12 @@ function App() {
               <Route path="/home" element={<HomeTest />} />
           </Routes>
       </Router>
+    // <div className="App" id="app">
+    //
+    //     <Navbar />
+    //     <Sidebar />
+    //     <CurrentSong />
+    // </div>
   );
 }
 
