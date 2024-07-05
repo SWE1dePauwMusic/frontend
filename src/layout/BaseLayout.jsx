@@ -1,13 +1,16 @@
-import Sidebar from '../components/Sidebar/Sidebar'
-import Navbar from '../components/Navbar/Navbar'
+import {Sidebar} from "../components/Sidebar/Sidebar";
+import {Navbar} from "../components/Navbar/Navbar";
+import {Home} from "../pages/Home/Home";
+
 const BaseLayout = () => {
   return (
     <main className="page-wrapper">
       {/* left of page */}
-      <Sidebar />
+      {/*<Sidebar />*/}
       {/* right side/content of the page */}
       <div className="content-wrapper">
-      <Navbar />
+          <Home/>
+      {/*<Navbar />*/}
       </div>
     </main>
   );

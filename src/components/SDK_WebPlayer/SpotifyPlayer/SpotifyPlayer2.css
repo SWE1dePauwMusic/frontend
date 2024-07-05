@@ -1,0 +1,131 @@
+.spotify-player-wrapper {
+    /*display: flex;*/
+    justify-content: center;
+    /*align-items: center;*/
+    /*min-height: 100vh;*/
+    font-family: 'Arial', sans-serif;
+}
+
+.spotify-player-container {
+    display: flex;
+    align-items: center;
+    background-color: rgba(0,0,0,0.9);
+    padding: 20px;
+    border-radius: 15px;
+    max-width: 900px;
+    width: 100%;
+}
+
+.now-playing-cover {
+    width: 90px;
+    height: 90px;
+    border-radius: 10px;
+    margin-right: 20px;
+}
+
+.now-playing-info {
+    flex: 1;
+}
+
+.now-playing-details {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.now-playing-name {
+    font-size: 18px;
+    font-weight: bold;
+    margin-right: 10px;
+    color: white;
+}
+
+.now-playing-artist {
+    font-size: 14px;
+    color: #b3b3b3;
+}
+
+.spotify-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.control-button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    margin: 0 10px;
+}
+
+.control-button:hover {
+    color: #ffbf00;
+}
+
+.progress-bar {
+    display: flex;
+    align-items: center;
+}
+
+.current-time, .total-time {
+    font-size: 12px;
+    margin: 0 10px;
+}
+
+.progress {
+    flex: 1;
+    height: 4px;
+    background-color: #535353;
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.progress-filled {
+    height: 100%;
+    background-color: #ffbf00;
+    border-radius: 2px;
+}
+
+.volume-control {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.volume-control label {
+    margin-right: 10px;
+    font-size: 16px;
+    color: #ffbf00; /* Match the color */
+}
+
+.volume-control input[type="range"] {
+    -webkit-appearance: none;
+    width: 60px;
+    height: 5px;
+    background: #404040;
+    border-radius: 5px;
+    outline: none;
+    transition: background 0.3s;
+}
+
+.volume-control input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 10px;
+    height: 10px;
+    background: #ffbf00; /* Match the color */
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.volume-control input[type="range"]::-moz-range-thumb {
+    width: 100px;
+    height: 10px;
+    background: #ffbf00; /* Match the color */
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
