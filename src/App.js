@@ -1,4 +1,5 @@
 import "./App.css";
+import Like from "./components/Like/Like";
 import { Navbar } from "./components/Navbar/Navbar";
 import { Sidebar } from "./components/Sidebar/Sidebar";
 import { CurrentSong } from "./pages/CurrentSong/CurrentSong";
@@ -12,6 +13,7 @@ function App() {
         <Navbar />
         <Sidebar />
         <CurrentSong />
+        <Like />
     </div>
   );
 }
