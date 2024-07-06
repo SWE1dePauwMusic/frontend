@@ -1,7 +1,6 @@
 // Playlist.js
 import React from 'react';
-
-
+import playlistData from '../../mockData/playlist_sample.json';
 // Helper function to format duration from milliseconds to mm:ss
 const formatDuration = (duration) => {
     const minutes = Math.floor(duration / 60000);
@@ -9,7 +8,9 @@ const formatDuration = (duration) => {
     return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
 };
 
-const Playlist = ({ playlist, accessToken, deviceId }) => {
+const Playlist = ({ accessToken, deviceId }) => {
+    const playlist = playlistData.data.playlistInfo;
+    console.log(playlist, accessToken, deviceId)
     const playTrack = (trackUri) => {
         fetch(`https://api.spotify.com/v1/me/player/play?device_id=${deviceId}`, {
             method: 'PUT',

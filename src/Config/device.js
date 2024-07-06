@@ -1,4 +1,7 @@
+
+
 async function switchDevice(accessToken, deviceName) {
+    console.log("Test", accessToken, deviceName)
     try {
         const url = '/auth/switchDevice';
         const requestOptions = {

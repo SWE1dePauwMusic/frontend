@@ -1,6 +1,6 @@
-import SpotifyPlayer from "./SpotifyPlayer/SpotifyPlayer2";
+import React, { useState, useEffect } from 'react';
 import switchDevice from "../../Config/device";
-import React, {useEffect, useState} from "react";
+import SpotifyPlayer from "./SpotifyPlayer/SpotifyPlayer2";
 
 const track = {
     name: "",
@@ -105,14 +105,14 @@ function WebPlayback() {
         }
     };
 
-    if (!is_active) { 
+    if (!is_active) {
         return (
             <>
                 <div className="container">
                     <div className="main-wrapper">
                         <b> ...Waiting to transfer device... </b>
                         <button
-                        onClick={handleSwitchDevice}
+                            onClick={handleSwitchDevice}
                         >Manual Switch device</button>
                     </div>
                 </div>
