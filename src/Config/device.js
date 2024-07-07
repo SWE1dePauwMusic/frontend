@@ -24,6 +24,8 @@ async function switchDevice(accessToken, deviceName) {
         }
 
         const responseData = await response.json();
+        console.log(responseData.data)
+        localStorage.setItem('deviceId', responseData.data.deviceId);
         return responseData;
     } catch (error) {
         console.error('Error switching device:', error);

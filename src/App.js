@@ -39,7 +39,7 @@ function App() {
     const [token, setToken] = useState('');
     const redirect_uri = '/auth/token';
 
-    const deviceId = "2cf2a76cc446be02265a8ca9941298afa7e3ef9b";
+
 
     useEffect(() => {
         const fetchToken = async () => {
@@ -69,7 +69,7 @@ function App() {
                         <Route path="/" element={<Navigate to="/main" />} />
                         <Route path="/main" element={
                             <BaseLayout>
-                                <UserPlaylists accessToken={localStorage.getItem("accessToken")} deviceId={deviceId}/>
+                                <UserPlaylists accessToken={localStorage.getItem("accessToken")} deviceId={localStorage.getItem("deviceId")}/>
                             </BaseLayout>
                         } />
                     </>
