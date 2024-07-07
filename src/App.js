@@ -14,6 +14,7 @@ import { CurrentSong } from "./pages/CurrentSong/CurrentSong";
 import BaseLayout from "./components/BaseLayOut/baseLayout";
 import Playlist from "./components/Playlists/Playlist2";
 import UserPlaylists from "./components/Playlists/ListPlaylist";
+import SongCard2 from "./components/Card/SongCard/SongCard2";
 
 
 // function App() {
@@ -39,8 +40,6 @@ function App() {
     const [token, setToken] = useState('');
     const redirect_uri = '/auth/token';
 
-
-
     useEffect(() => {
         const fetchToken = async () => {
             const storedToken = localStorage.getItem('accessToken');
@@ -59,8 +58,13 @@ function App() {
         }, 900000);   //15minutes
 
         // Clear the interval on component unmount
-        return () => clearInterval(intervalId);
+        return () => {
+            clearInterval(intervalId);
+            localStorage.clear();
+        }
     }, [redirect_uri]);
+
+
 
     return (
             <Routes>
@@ -69,7 +73,8 @@ function App() {
                         <Route path="/" element={<Navigate to="/main" />} />
                         <Route path="/main" element={
                             <BaseLayout>
-                                <UserPlaylists accessToken={localStorage.getItem("accessToken")} deviceId={localStorage.getItem("deviceId")}/>
+                                {/*<UserPlaylists accessToken={localStorage.getItem("accessToken")} deviceId={localStorage.getItem("deviceId")}/>*/}
+                               <Playlist accessToken={localStorage.getItem("accessToken")} deviceId={localStorage.getItem("deviceId")}/>
                             </BaseLayout>
                         } />
                     </>

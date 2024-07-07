@@ -1,5 +1,6 @@
 // SongCard.js
 import React from 'react';
+import {reqPlayTrackWithId} from "../../../Config/reqTrackPlaylist";
 
 // Helper function to format duration from milliseconds to mm:ss
 const formatDuration = (duration) => {
@@ -8,62 +9,66 @@ const formatDuration = (duration) => {
     return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
 };
 
-const SongCard = ({ song }) => {
+
+const SongCard = ({index, track}) => {
     return (
-        <div style={styles.card}>
-            <img src={song.images[0].url} alt={song.name} style={styles.image} />
-            <div style={styles.info}>
-                <h2 style={styles.title}>{song.name}</h2>
-                <p style={styles.artists}>{song.artists.join(', ')}</p>
-                <p style={styles.popularity}>Popularity: {song.popularity}</p>
-                <p style={styles.duration}>Duration: {formatDuration(song.duration)}</p>
+        <div key={track.id} style={styles.track}>
+            <span style={styles.trackNumber}>{index + 1}</span>
+            <img src={track.images[2].url} alt={track.name} style={styles.trackImage}/>
+            <div style={styles.trackInfo}>
+                <span style={styles.trackName}>{track.name}</span>
+                <span style={styles.trackArtists}>{track.artists.join(', ')}</span>
             </div>
+            <span style={styles.trackDuration}>{formatDuration(track.duration)}</span>
+            <button style={styles.playButton} onClick={() => reqPlayTrackWithId(localStorage.getItem('accessToken'), localStorage.getItem('deviceId'), track.id)}>Play</button>
         </div>
     );
 };
 
 const styles = {
-    card: {
+    tracks: {
+        marginTop: '20px',
+    },
+    track: {
         display: 'flex',
-        flexDirection: 'row',
-        border: '1px solid #ddd',
-        borderRadius: '8px',
-        padding: '16px',
-        margin: '16px',
-        boxShadow: '0 4px 8px rgba(0,0,0,0.1)',
-        maxWidth: '600px',
+        alignItems: 'center',
+        padding: '10px 0',
+        borderBottom: '1px solid #ddd',
     },
-    image: {
-        borderRadius: '8px',
-        width: '150px',
-        height: '150px',
-        objectFit: 'cover',
+    trackNumber: {
+        width: '20px',
+        textAlign: 'center',
+        marginRight: '10px',
     },
-    info: {
-        marginLeft: '16px',
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
+    trackImage: {
+        width: '50px',
+        height: '50px',
+        borderRadius: '4px',
+        marginRight: '10px',
     },
-    title: {
-        margin: '0 0 8px 0',
-        fontSize: '24px',
+    trackInfo: {
+        flex: 1,
     },
-    artists: {
-        margin: '0 0 4px 0',
+    trackName: {
         fontSize: '16px',
-        color: '#666',
+        fontWeight: 'bold',
+        color: '#333',
+        marginRight: '4px',
     },
-    popularity: {
-        margin: '0 0 4px 0',
+    trackArtists: {
         fontSize: '14px',
-        color: '#888',
+        color: '#555',
     },
-    duration: {
-        margin: '0',
+    trackDuration: {
         fontSize: '14px',
-        color: '#888',
+        color: '#999',
     },
-};
+    playButton: {
+        marginLeft: '10px',
+        padding: '5px 10px',
+        fontSize: '14px',
+        cursor: 'pointer',
+    },
+}
 
 export default SongCard;
