@@ -1,0 +1,32 @@
+.playlist-card{
+    width: 100%;
+    height: 100%;
+    color: white;
+    padding-top: 5rem;
+    padding-bottom: 3rem;
+    background-color: #0C0C0C;;
+}
+
+/* .right-card {
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+} */
+
+p {
+    color: white;
+}
+
+.row {
+    padding-left: 30rem;
+}
+.song-image {
+    width: 12%;
+    height: 12%;
+}
+
+h1 {
+    font-size: 55px;
+}

@@ -41,7 +41,7 @@ export const SongCard = () => {
   }
 
   const { name, artists, popularity, duration, images } = trackData;
-  console.log(artists);
+ 
 
   let imageUrl = "";
   if (images.length > 0) {
@@ -53,7 +53,7 @@ export const SongCard = () => {
     const seconds = ((durationInMs % 60000) / 1000).toFixed(0);
     return `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
   };
-  console.log(formatDuration(duration));
+
 
   return (
     <div className="songCard-body">
