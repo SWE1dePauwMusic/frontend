@@ -2,14 +2,9 @@
 import "./App.css";
 import {useEffect, useState} from "react";
 import {getToken, refreshAccessToken} from "./Config/Auth";
-import WebPlayback from "./components/SDK_WebPlayer/WebPlayback";
 import Login from "./components/SDK_WebPlayer/Login";
 import { Route, Routes, Navigate } from 'react-router-dom';
-import Callback from "./components/Callback";
-import HomeTest from "./components/Home";
-import GoogleLogin from "./components/googleLogin";
-import { Navbar } from "./components/Navbar/Navbar";
-import { Sidebar } from "./components/Sidebar/Sidebar";
+
 import { CurrentSong } from "./pages/CurrentSong/CurrentSong";
 import BaseLayout from "./components/BaseLayOut/baseLayout";
 import Playlist from "./components/Playlists/Playlist2";

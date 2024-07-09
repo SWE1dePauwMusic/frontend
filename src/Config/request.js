@@ -17,7 +17,6 @@ async function makeRequest(options) {
         }
         // if (response.type === 'json'){
         const contentType = response.headers.get('content-type');
-        console.log(contentType)
         if (contentType && contentType.includes('application/json')){
             const responseData = await response.json();
             return responseData;
