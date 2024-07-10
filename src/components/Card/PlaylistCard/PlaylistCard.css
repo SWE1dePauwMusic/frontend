@@ -1,10 +1,14 @@
-.playlist-card{
+.playlist{
     width: 100%;
     height: 100%;
     color: white;
     padding-top: 5rem;
     padding-bottom: 3rem;
     background-color: #0C0C0C;
+}
+.playlist-card {
+    padding-bottom: 3rem;
+    padding-top: 1rem;
 }
 .song-list {
     padding-left: 30rem;
@@ -21,21 +25,29 @@ h3, h2, p {
 .row {
     padding-left: 30rem;
 }
-.song-image {
-    width: 12%;
-    height: 12%;
-}
 
 h1 {
     font-size: 55px;
 }
 
-.right-card {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding-bottom: 0.5rem;
+.playlist-img {
+    width: 5%;
+    height: 5%;
+    padding-left: 30rem;
+}
+
+#playlist-image{
+    width: 300px;
+    height: 300px;
+}
+
+.playlist-name {
+    padding-left: 15rem;
+}
+
+.song-card {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 }
 
 .img {
@@ -43,8 +55,14 @@ h1 {
     height: 10%;
     border: 2px solid #121413;
     border-radius: 8px;
+} 
+
+.song-infor {
+    padding-left: 2rem;
 }
 
-.song-card {
-    margin-top: 0.5rem;
+.song-duration {
+    padding-left: 10rem;
+    right: 5rem;
+    position: absolute;
 }
