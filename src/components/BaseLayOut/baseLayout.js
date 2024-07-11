@@ -8,7 +8,7 @@ import WebPlayback from "../SDK_WebPlayer/WebPlayback";
 const BaseLayout = ({ children }) => {
     return (
         <div className="base-layout">
-            <Navbar />
+            {/*<Navbar />*/}
             <div className="main-content">
                 <div className="page-content">
                     {children}

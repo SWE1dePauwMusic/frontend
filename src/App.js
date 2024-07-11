@@ -10,6 +10,7 @@ import BaseLayout from "./components/BaseLayOut/baseLayout";
 import Playlist from "./components/Playlists/Playlist2";
 import UserPlaylists from "./components/Playlists/ListPlaylist";
 import SongCard2 from "./components/Card/SongCard/SongCard2";
+import {ButtonTopTrack, TopTrack} from "./pages/TopTrack-Recommendation/ToptrackRec";
 
 
 // function App() {
@@ -68,10 +69,12 @@ function App() {
                         <Route path="/" element={<Navigate to="/main" />} />
                         <Route path="/main" element={
                             <BaseLayout>
+                                <TopTrack />
                                 {/*<UserPlaylists accessToken={localStorage.getItem("accessToken")} deviceId={localStorage.getItem("deviceId")}/>*/}
-                               <Playlist accessToken={localStorage.getItem("accessToken")} deviceId={localStorage.getItem("deviceId")}/>
+                               {/*<Playlist accessToken={localStorage.getItem("accessToken")} deviceId={localStorage.getItem("deviceId")}/>*/}
                             </BaseLayout>
                         } />
+                        {/*<Route path="/topTracks" element={<ButtonTopTrack />} />*/}
                     </>
                 ) : (
                     <Route path="/" element={<Login />} />

@@ -3,7 +3,7 @@
 
 import makeRequest from "./request";
 
-async function reqPlayTrackWithId(accessToken, deviceId, trackUri){
+async function reqPlayTrackWithId(accessToken, deviceId, trackUris){
     //use makeRequest
     const options = {
         method: 'PUT',
@@ -13,7 +13,7 @@ async function reqPlayTrackWithId(accessToken, deviceId, trackUri){
             'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-            uris: ['spotify:track:' + trackUri],
+            uris: trackUris.map(trackUri => 'spotify:track:' + trackUri),
         })
     }
     try {

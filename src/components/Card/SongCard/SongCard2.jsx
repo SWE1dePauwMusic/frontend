@@ -17,10 +17,10 @@ const SongCard = ({index, track}) => {
             <img src={track.images[2].url} alt={track.name} style={styles.trackImage}/>
             <div style={styles.trackInfo}>
                 <span style={styles.trackName}>{track.name}</span>
-                <span style={styles.trackArtists}>{track.artists.join(', ')}</span>
+                <span style={styles.trackArtists}>{track.artists.map(artist => artist.name).join(', ')}</span>
             </div>
             <span style={styles.trackDuration}>{formatDuration(track.duration)}</span>
-            <button style={styles.playButton} onClick={() => reqPlayTrackWithId(localStorage.getItem('accessToken'), localStorage.getItem('deviceId'), track.id)}>Play</button>
+            <button style={styles.playButton} onClick={() => reqPlayTrackWithId(localStorage.getItem('accessToken'), localStorage.getItem('deviceId'), [track.id])}>Play</button>
         </div>
     );
 };
