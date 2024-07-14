@@ -1,0 +1,327 @@
+{
+  "success": true,
+  "statusCode": 200,
+  "data": {
+    "playlistInfo": {
+      "trackList": [
+        {
+          "name": "Gửi em",
+          "artists": [
+            {
+              "name": "Vũ Thanh Vân",
+              "id": "5ptgjFDE2abY6Xwo4ytufN"
+            }
+          ],
+          "duration": 320500,
+          "id": "0TRq0GS9HUciq1FxgLIi3R",
+          "images": [
+            {
+              "height": 640,
+              "url": "https://i.scdn.co/image/ab67616d0000b273eb0270e719a88c738f2e698a",
+              "width": 640
+            },
+            {
+              "height": 300,
+              "url": "https://i.scdn.co/image/ab67616d00001e02eb0270e719a88c738f2e698a",
+              "width": 300
+            },
+            {
+              "height": 64,
+              "url": "https://i.scdn.co/image/ab67616d00004851eb0270e719a88c738f2e698a",
+              "width": 64
+            }
+          ],
+          "popularity": 26,
+          "href": "https://api.spotify.com/v1/tracks/0TRq0GS9HUciq1FxgLIi3R"
+        },
+        {
+          "name": "Một Điều Tự Nhiên",
+          "artists": [
+            {
+              "name": "TRANG",
+              "id": "2knyDFP4xw9wZEWA98JX6b"
+            },
+            {
+              "name": "Tùng",
+              "id": "1TdtsDVivxc6PpkQdNuXdR"
+            }
+          ],
+          "duration": 152000,
+          "id": "1eTAVqcgNxcGVdKVgGwTwy",
+          "images": [
+            {
+              "height": 640,
+              "url": "https://i.scdn.co/image/ab67616d0000b2730f2e457a4a72b17a405ba70e",
+              "width": 640
+            },
+            {
+              "height": 300,
+              "url": "https://i.scdn.co/image/ab67616d00001e020f2e457a4a72b17a405ba70e",
+              "width": 300
+            },
+            {
+              "height": 64,
+              "url": "https://i.scdn.co/image/ab67616d000048510f2e457a4a72b17a405ba70e",
+              "width": 64
+            }
+          ],
+          "popularity": 29,
+          "href": "https://api.spotify.com/v1/tracks/1eTAVqcgNxcGVdKVgGwTwy"
+        },
+        {
+          "name": "Đừng Xa Anh Nhé (feat. Harvey)",
+          "artists": [
+            {
+              "name": "Kevindauroi",
+              "id": "7idMddC7XksYOUjJRzN1yA"
+            }
+          ],
+          "duration": 230736,
+          "id": "4jWxeq0IpdNhEaBzkNNwTf",
+          "images": [
+            {
+              "height": 640,
+              "url": "https://i.scdn.co/image/ab67616d0000b2735c34d84b4ca1562ce2499a72",
+              "width": 640
+            },
+            {
+              "height": 300,
+              "url": "https://i.scdn.co/image/ab67616d00001e025c34d84b4ca1562ce2499a72",
+              "width": 300
+            },
+            {
+              "height": 64,
+              "url": "https://i.scdn.co/image/ab67616d000048515c34d84b4ca1562ce2499a72",
+              "width": 64
+            }
+          ],
+          "popularity": 49,
+          "href": "https://api.spotify.com/v1/tracks/4jWxeq0IpdNhEaBzkNNwTf"
+        },
+        {
+          "name": "Cà Lem Kem Chuối",
+          "artists": [
+            {
+              "name": "Đá Số Tới",
+              "id": "2BAhRYk5QrGfs5KNo9gHr4"
+            }
+          ],
+          "duration": 159600,
+          "id": "6VXLdHO5VS7OXBUke0WR0K",
+          "images": [
+            {
+              "height": 640,
+              "url": "https://i.scdn.co/image/ab67616d0000b273a53b4f1b6b996672561fe0dd",
+              "width": 640
+            },
+            {
+              "height": 300,
+              "url": "https://i.scdn.co/image/ab67616d00001e02a53b4f1b6b996672561fe0dd",
+              "width": 300
+            },
+            {
+              "height": 64,
+              "url": "https://i.scdn.co/image/ab67616d00004851a53b4f1b6b996672561fe0dd",
+              "width": 64
+            }
+          ],
+          "popularity": 21,
+          "href": "https://api.spotify.com/v1/tracks/6VXLdHO5VS7OXBUke0WR0K"
+        },
+        {
+          "name": "Cho Lần Cuối",
+          "artists": [
+            {
+              "name": "Chủ Tịch Kim",
+              "id": "0zn7lYLmKeTdAva9gucVJG"
+            }
+          ],
+          "duration": 277930,
+          "id": "6976xt9iynyu7kuhQvYAu7",
+          "images": [
+            {
+              "height": 640,
+              "url": "https://i.scdn.co/image/ab67616d0000b2737456fb8f1d48d7a61a4f67c3",
+              "width": 640
+            },
+            {
+              "height": 300,
+              "url": "https://i.scdn.co/image/ab67616d00001e027456fb8f1d48d7a61a4f67c3",
+              "width": 300
+            },
+            {
+              "height": 64,
+              "url": "https://i.scdn.co/image/ab67616d000048517456fb8f1d48d7a61a4f67c3",
+              "width": 64
+            }
+          ],
+          "popularity": 16,
+          "href": "https://api.spotify.com/v1/tracks/6976xt9iynyu7kuhQvYAu7"
+        },
+        {
+          "name": "Đi Qua Mùa Hạ (Acoustic Version)",
+          "artists": [
+            {
+              "name": "Thái Đinh",
+              "id": "7lq25uVNvzRoAJgr4CYr8e"
+            }
+          ],
+          "duration": 305509,
+          "id": "1CO7SlX7KBRF12fbXt5hAO",
+          "images": [
+            {
+              "height": 640,
+              "url": "https://i.scdn.co/image/ab67616d0000b27318906d5d72bf78eb3b620b9d",
+              "width": 640
+            },
+            {
+              "height": 300,
+              "url": "https://i.scdn.co/image/ab67616d00001e0218906d5d72bf78eb3b620b9d",
+              "width": 300
+            },
+            {
+              "height": 64,
+              "url": "https://i.scdn.co/image/ab67616d0000485118906d5d72bf78eb3b620b9d",
+              "width": 64
+            }
+          ],
+          "popularity": 28,
+          "href": "https://api.spotify.com/v1/tracks/1CO7SlX7KBRF12fbXt5hAO"
+        },
+        {
+          "name": "Đi Về Nhà",
+          "artists": [
+            {
+              "name": "Đen",
+              "id": "1LEtM3AleYg1xabW6CRkpi"
+            },
+            {
+              "name": "JustaTee",
+              "id": "3rjcQ5VIWCN4q7UFetzdeO"
+            }
+          ],
+          "duration": 200000,
+          "id": "7LVrrX8pkzI9fMF88nGabt",
+          "images": [
+            {
+              "height": 640,
+              "url": "https://i.scdn.co/image/ab67616d0000b2732a8efe3bfa6a605fcf863237",
+              "width": 640
+            },
+            {
+              "height": 300,
+              "url": "https://i.scdn.co/image/ab67616d00001e022a8efe3bfa6a605fcf863237",
+              "width": 300
+            },
+            {
+              "height": 64,
+              "url": "https://i.scdn.co/image/ab67616d000048512a8efe3bfa6a605fcf863237",
+              "width": 64
+            }
+          ],
+          "popularity": 58,
+          "href": "https://api.spotify.com/v1/tracks/7LVrrX8pkzI9fMF88nGabt"
+        },
+        {
+          "name": "GIẤC MƠ",
+          "artists": [
+            {
+              "name": "MiQ",
+              "id": "0Tj8ibTNylwlCga3oM1uBm"
+            },
+            {
+              "name": "Catchellers",
+              "id": "1K3Oc9Q3wYgZANTcpsRq3C"
+            },
+            {
+              "name": "Billis",
+              "id": "07vl3No6oFpi7pBu6OZv4v"
+            }
+          ],
+          "duration": 113938,
+          "id": "6i51QeC3ks08i7vhuyltWR",
+          "images": [
+            {
+              "height": 640,
+              "url": "https://i.scdn.co/image/ab67616d0000b27366aed5d12b34ee015d259f07",
+              "width": 640
+            },
+            {
+              "height": 300,
+              "url": "https://i.scdn.co/image/ab67616d00001e0266aed5d12b34ee015d259f07",
+              "width": 300
+            },
+            {
+              "height": 64,
+              "url": "https://i.scdn.co/image/ab67616d0000485166aed5d12b34ee015d259f07",
+              "width": 64
+            }
+          ],
+          "popularity": 40,
+          "href": "https://api.spotify.com/v1/tracks/6i51QeC3ks08i7vhuyltWR"
+        },
+        {
+          "name": "Ngả Nghiêng (Cổ Động Loanh Quanh)",
+          "artists": [
+            {
+              "name": "Minh Đinh",
+              "id": "4NfuHLESitkh66LOZeyzsu"
+            }
+          ],
+          "duration": 231019,
+          "id": "6lbKIU74zltDpWD22CJdFg",
+          "images": [
+            {
+              "height": 640,
+              "url": "https://i.scdn.co/image/ab67616d0000b2739ba56d25b1a5b0d43af74a21",
+              "width": 640
+            },
+            {
+              "height": 300,
+              "url": "https://i.scdn.co/image/ab67616d00001e029ba56d25b1a5b0d43af74a21",
+              "width": 300
+            },
+            {
+              "height": 64,
+              "url": "https://i.scdn.co/image/ab67616d000048519ba56d25b1a5b0d43af74a21",
+              "width": 64
+            }
+          ],
+          "popularity": 26,
+          "href": "https://api.spotify.com/v1/tracks/6lbKIU74zltDpWD22CJdFg"
+        },
+        {
+          "name": "Hiệu Ứng Trốn Chạy",
+          "artists": [
+            {
+              "name": "Cá Hồi Hoang",
+              "id": "2j3AXmye1FJXoGOXr6tufj"
+            }
+          ],
+          "duration": 260223,
+          "id": "2Y8QGMcO95sqZEob67IP3n",
+          "images": [
+            {
+              "height": 640,
+              "url": "https://i.scdn.co/image/ab67616d0000b273538febfe1d8baad2ff791ac5",
+              "width": 640
+            },
+            {
+              "height": 300,
+              "url": "https://i.scdn.co/image/ab67616d00001e02538febfe1d8baad2ff791ac5",
+              "width": 300
+            },
+            {
+              "height": 64,
+              "url": "https://i.scdn.co/image/ab67616d00004851538febfe1d8baad2ff791ac5",
+              "width": 64
+            }
+          ],
+          "popularity": 36,
+          "href": "https://api.spotify.com/v1/tracks/2Y8QGMcO95sqZEob67IP3n"
+        }
+      ]
+    }
+  },
+  "error": null
+}

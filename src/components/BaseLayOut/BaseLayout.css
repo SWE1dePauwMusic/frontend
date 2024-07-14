@@ -1,0 +1,32 @@
+.base-layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    position: relative;
+}
+
+.main-content {
+    display: flex;
+    flex: 1;
+}
+
+.sidebar {
+    width: 250px; /* Adjust the width as needed */
+    background-color: #f4f4f4; /* Optional: Background color for the sidebar */
+}
+
+.page-content {
+    flex: 1;
+    padding: 20px; /* Optional: Padding for the content area */
+}
+
+.web-playback {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Ensure it's on top of other elements */
+    background-color: #fff; /* Optional: Set a background color */
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.1); /* Optional: Add a shadow for better visibility */
+    padding: 10px; /* Optional: Add padding */
+}

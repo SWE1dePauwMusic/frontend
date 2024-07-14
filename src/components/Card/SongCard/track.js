@@ -1,14 +1,28 @@
-const response = {
-  "name":"Photograph",
-  "popularity":1668908,
-  "id":"6CgNoAbFJ4Q4Id4EjtbXlC",
-  "artists":["Boyce Avenue","Bea Miller"],
-  "images":[
-    {"url":"https://i.scdn.co/image/ab67616d0000b273eb52107a749a04b3741316dc", "height":640,"width":640},
-    {"url":"https://i.scdn.co/image/ab67616d00001e02eb52107a749a04b3741316dc","height":300,"width":300},
-    {"url":"https://i.scdn.co/image/ab67616d00004851eb52107a749a04b3741316dc","height":64,"width":64}
+// {
+//   "name":"Photograph",
+//   "popularity":61,
+//   "id":"6CgNoAbFJ4Q4Id4EjtbXlC",
+//   "artists":["Boyce Avenue","Bea Miller"],
+//   "images":[
+//     {"url":"https://i.scdn.co/image/ab67616d0000b273eb52107a749a04b3741316dc", "height":640,"width":640},
+//     {"url":"https://i.scdn.co/image/ab67616d00001e02eb52107a749a04b3741316dc","height":300,"width":300},
+//     {"url":"https://i.scdn.co/image/ab67616d00004851eb52107a749a04b3741316dc","height":64,"width":64}
+//   ],
+//   "duration":260186
+// }
+
+let response;
+response = {
+  "name": "Photograph",
+  "popularity": 1668908,
+  "id": "6CgNoAbFJ4Q4Id4EjtbXlC",
+  "artists": ["Boyce Avenue", "Bea Miller"],
+  "images": [
+    {"url": "https://i.scdn.co/image/ab67616d0000b273eb52107a749a04b3741316dc", "height": 640, "width": 640},
+    {"url": "https://i.scdn.co/image/ab67616d00001e02eb52107a749a04b3741316dc", "height": 300, "width": 300},
+    {"url": "https://i.scdn.co/image/ab67616d00004851eb52107a749a04b3741316dc", "height": 64, "width": 64}
   ],
-  "duration":260186
-}
+  "duration": 260186
+};
 
 export default response;
