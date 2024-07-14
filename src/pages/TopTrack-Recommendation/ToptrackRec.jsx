@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
-import makeRequest from "../../Config/request";
+import makeRequest from "../../utils/request";
 import Playlist from "../../components/Playlists/Playlist2";
+import {getTokenHandler} from "../../utils/tokenHandling";
+import {useNavigate} from "react-router-dom";
 
 const TopTrack = () => {
     const [playlist, setPlayListReady] = useState(null);
-
+    const navigate = useNavigate();
     const handleToptrack = async () => {
         try {
-            const accessToken = localStorage.getItem('accessToken');
+            const accessToken = getTokenHandler('accessToken');
 
             const options = {
                 method: 'GET',
@@ -22,8 +24,13 @@ const TopTrack = () => {
                 }
             }
 
-            const response = await makeRequest(options);
-            setPlayListReady(response);
+            const responseData = await makeRequest(options);
+            if (!responseData.success) {
+                // Log error details and possibly return or throw an error
+                console.log('ErrorCode:', responseData.status, 'ErrorMessage:', responseData.error);
+                return; // Or handle the error as needed, maybe throw an error or set an error state
+            }
+            setPlayListReady(responseData);
         } catch (error) {
             console.log(error);
         }
@@ -31,7 +38,7 @@ const TopTrack = () => {
 
     const handleRecommendationWithTopTrack = async () => {
         try {
-            const accessToken = localStorage.getItem('accessToken');
+            const accessToken = getTokenHandler('accessToken');
 
             const options = {
                 method: 'GET',
@@ -61,7 +68,11 @@ const TopTrack = () => {
                 }
             }
             const response2 = await makeRequest(options2);
-            console.log(response2.playlistInfo)
+            if (!response2.success) {
+                // Log error details and possibly return or throw an error
+                console.log('ErrorCode:', response2.status, 'ErrorMessage:', response2.error);
+                return; // Or handle the error as needed, maybe throw an error or set an error state
+            }
             setPlayListReady(response2);
 
 
@@ -73,6 +84,8 @@ const TopTrack = () => {
 
     return (
         <>
+            <button onClick={() => navigate('/main')}>Back</button>
+
             <button style={styles.playButton} onClick={handleToptrack}>
                 Top Track
             </button>
@@ -81,8 +94,6 @@ const TopTrack = () => {
             </button>
             {playlist && (
                 <Playlist
-                    accessToken={localStorage.getItem("accessToken")}
-                    deviceId={localStorage.getItem("deviceId")}
                     playlistResponse={playlist}
                 />
             )}

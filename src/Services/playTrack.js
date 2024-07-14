@@ -1,7 +1,7 @@
 //request to play a track
 
 
-import makeRequest from "./request";
+import makeRequest from "../utils/request";
 
 async function reqPlayTrackWithId(accessToken, deviceId, trackUris){
     //use makeRequest
@@ -18,7 +18,7 @@ async function reqPlayTrackWithId(accessToken, deviceId, trackUris){
     }
     try {
         const response = await makeRequest(options);
-        console.log(response)
+        console.log("Request Play", response)
         return response;
     } catch (error) {
         console.error('Error playing track:', error);

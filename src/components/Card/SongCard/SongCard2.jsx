@@ -1,6 +1,7 @@
 // SongCard.js
 import React from 'react';
-import {reqPlayTrackWithId} from "../../../Config/reqTrackPlaylist";
+import {reqPlayTrackWithId} from "../../../Services/playTrack";
+import {getTokenHandler} from "../../../utils/tokenHandling";
 
 // Helper function to format duration from milliseconds to mm:ss
 const formatDuration = (duration) => {
@@ -20,7 +21,7 @@ const SongCard = ({index, track}) => {
                 <span style={styles.trackArtists}>{track.artists.map(artist => artist.name).join(', ')}</span>
             </div>
             <span style={styles.trackDuration}>{formatDuration(track.duration)}</span>
-            <button style={styles.playButton} onClick={() => reqPlayTrackWithId(localStorage.getItem('accessToken'), localStorage.getItem('deviceId'), [track.id])}>Play</button>
+            <button style={styles.playButton} onClick={() => reqPlayTrackWithId(getTokenHandler("accessToken"), localStorage.getItem('deviceId'), [track.id])}>Play</button>
         </div>
     );
 };

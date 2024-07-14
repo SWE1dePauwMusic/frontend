@@ -1,4 +1,4 @@
-const makeRequest = require("./request");
+const makeRequest = require("../utils/request");
 
 async function switchDevice(accessToken, deviceName) {
     //use makeRequest

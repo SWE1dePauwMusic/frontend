@@ -2,15 +2,12 @@
 import React from 'react';
 import playlistData from '../../mockData/playlist_sample.json';
 import SongCard from "../Card/SongCard/SongCard2";
-import {reqPlayTrackWithId} from "../../Config/reqTrackPlaylist";
+import {reqPlayTrackWithId} from "../../Services/playTrack";
+import {getTokenHandler} from "../../utils/tokenHandling";
 // Helper function to format duration from milliseconds to mm:ss
-const formatDuration = (duration) => {
-    const minutes = Math.floor(duration / 60000);
-    const seconds = ((duration % 60000) / 1000).toFixed(0);
-    return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
-};
 
-const Playlist = ({ accessToken, deviceId, playlistResponse }) => {
+
+const Playlist = ({ playlistResponse }) => {
     const playlist = playlistResponse.data.playlistInfo;
     const listId = playlist.trackList.map((item) => item.id);
 
@@ -20,7 +17,7 @@ const Playlist = ({ accessToken, deviceId, playlistResponse }) => {
                 {/*<img src={playlist.images[0].url} alt={playlist.name} style={styles.playlistImage} />*/}
                 <div>
                     <h1 style={styles.playlistName}>{playlist.name}</h1>
-                    <button onClick={()=>reqPlayTrackWithId(localStorage.getItem('accessToken'), localStorage.getItem('deviceId'), listId)}>
+                    <button onClick={()=>reqPlayTrackWithId(getTokenHandler('accessToken'), localStorage.getItem('deviceId'), listId)}>
                         Play
                     </button>
                 </div>
