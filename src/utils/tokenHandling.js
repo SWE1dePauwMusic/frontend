@@ -1,7 +1,7 @@
 export function storeTokenHandler(authTokenData){
     const accessToken = authTokenData.access_token;
     const refreshToken = authTokenData.refresh_token;
-    const expirationTime = new Date().getTime() + authTokenData.expiresIn * 1000; // Expiration time in milliseconds
+    const expiresIn = authTokenData.expiresIn;
 
     if (accessToken && accessToken.length > 2){
         sessionStorage.setItem('accessToken', accessToken);
@@ -10,8 +10,8 @@ export function storeTokenHandler(authTokenData){
     if (refreshToken && refreshToken.length > 2){
         sessionStorage.setItem('refreshToken', refreshToken);
     }
-
-    if (expirationTime){
+    if (expiresIn && expiresIn > 0){
+        const expirationTime = new Date().getTime() + authTokenData.expiresIn * 1000; // Expiration time in milliseconds
         sessionStorage.setItem('expirationTime', expirationTime.toString());
     }
 }

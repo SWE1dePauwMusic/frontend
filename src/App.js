@@ -71,28 +71,9 @@ function App() {
 
     return (
         <AuthProvider>
-            {/*<Routes>*/}
-            {/*    <Route path="/login" element={<Login />} />*/}
-
-            {/*    <Route path="/main" element={*/}
-            {/*        <PrivateRoute children={*/}
-            {/*            <BaseLayout>*/}
-            {/*                <Routes>*/}
-
-            {/*                    <Route path="/topTrack" element={<TopTrack/>} />*/}
-            {/*                    <Route path={"/user-playlists"} element={<UserPlaylists />} />*/}
-            {/*                </Routes>*/}
-            {/*                /!* Uncomment if needed:*/}
-            {/*                    <UserPlaylists accessToken={localStorage.getItem("accessToken")} deviceId={localStorage.getItem("deviceId")}/>*/}
-            {/*                    <Playlist accessToken={localStorage.getItem("accessToken")} deviceId={localStorage.getItem("deviceId")}/>*/}
-            {/*                    *!/*/}
-            {/*            </BaseLayout>*/}
-            {/*        }/>*/}
-            {/*    }/>*/}
-            {/*</Routes>*/}
             <Routes>
                 <Route path="/login" element={<Login />} />
-                {/*<Route path="/" element={<Navigate to="/main" replace />} />*/}
+                <Route path="/" element={<Navigate to="/main" replace />} />
                 <Route path="/main" element={<BaseLayout/>}>
                         <Route path='' element={
                             <>
