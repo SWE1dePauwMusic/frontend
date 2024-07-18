@@ -7,12 +7,12 @@ import {getTokenHandler} from "../../utils/tokenHandling";
 // Helper function to format duration from milliseconds to mm:ss
 
 
-const Playlist = ({ playlistResponse }) => {
+const Playlist = ({ playlistResponse, playlistId, removeTrack}) => {
     const playlist = playlistResponse.data.playlistInfo;
     const listId = playlist.trackList.map((item) => item.id);
 
     return (
-        <div style={styles.playlist}>
+        <div style={styles.playlist} key={playlistId}>
             <div style={styles.header}>
                 {/*<img src={playlist.images[0].url} alt={playlist.name} style={styles.playlistImage} />*/}
                 <div>
@@ -24,7 +24,8 @@ const Playlist = ({ playlistResponse }) => {
             </div>
             <div style={styles.tracks}>
                 {playlist.trackList.map((track, index) => (
-                    <SongCard track={track} index={index}/>
+                        <SongCard track={track} index={index} removeTrack={removeTrack} playlistId={playlistId}/>
+
                 ))}
             </div>
         </div>

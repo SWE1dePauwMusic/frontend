@@ -19,6 +19,7 @@ async function makeRequest(options) {
     }
 
     try {
+        console.log("Send request: ", requestUrl)
         const response = await fetch(requestUrl, {
             method,
             headers,
