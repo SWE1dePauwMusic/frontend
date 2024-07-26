@@ -1,6 +1,6 @@
 import "./App.css";
 import {useEffect, useState} from "react";
-import Login from "./components/SDK_WebPlayer/Login";
+import Login from "./components/Auth/Login";
 import {Route, Routes, Navigate, useNavigate,} from 'react-router-dom';
 
 import { CurrentSong } from "./pages/CurrentSong/CurrentSong";
