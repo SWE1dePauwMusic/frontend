@@ -3,28 +3,6 @@ import React, {useEffect, useState} from 'react';
 import {Route, Navigate, useLocation} from 'react-router-dom';
 import {getTokenHandler} from "../../utils/tokenHandling";
 
-// const PrivateRoute = ({ children }) => {
-//     const [token, setToken] = useState('');
-//     useEffect(() => {
-//         setTimeout(() => {
-//             const retrievedToken = getTokenHandler("accessToken");  // Retrieve token from storage or API
-//             console.log('retrievedToken', retrievedToken)
-//             setToken(retrievedToken);
-//         }, 100);
-//
-//     }, []);
-//
-//
-//      const location = useLocation();
-//
-//      if (!token) {
-//          return <Navigate to="/login" state={{ from: location }} replace />;
-//      }
-//      return children;
-//
-// };
-
-
 const PrivateRoute = ({ children }) => {
     const [token, setToken] = useState(null);  // Initialize token as null
     const [isLoading, setIsLoading] = useState(true);  // Track loading state
@@ -37,7 +15,7 @@ const PrivateRoute = ({ children }) => {
             console.log('Retrieved Token:', retrievedToken);
             setToken(retrievedToken);
             setIsLoading(false);  // Update loading state after token is retrieved
-        }, 0);
+        }, 1000);
     }, []);
 
     // Check if still loading token

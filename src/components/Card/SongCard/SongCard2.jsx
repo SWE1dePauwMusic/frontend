@@ -11,7 +11,7 @@ const formatDuration = (duration) => {
 };
 
 
-const SongCard = ({index, track}) => {
+const SongCard = ({index, track, removeTrack, playlistId}) => {
     return (
         <div key={track.id} style={styles.track}>
             <span style={styles.trackNumber}>{index + 1}</span>
@@ -22,6 +22,9 @@ const SongCard = ({index, track}) => {
             </div>
             <span style={styles.trackDuration}>{formatDuration(track.duration)}</span>
             <button style={styles.playButton} onClick={() => reqPlayTrackWithId(getTokenHandler("accessToken"), localStorage.getItem('deviceId'), [track.id])}>Play</button>
+            <button onClick={() => {
+                removeTrack(track.id)
+            }}>Remove</button>
         </div>
     );
 };
