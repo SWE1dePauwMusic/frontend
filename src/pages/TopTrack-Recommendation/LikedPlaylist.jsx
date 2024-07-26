@@ -15,7 +15,7 @@ const LikedPlaylist = () => {
 
             const options = {
                 method: 'GET',
-                url: `http://localhost:5000/my-fav`,
+                url: `/my-fav`,
                 headers: {
                     'Authorization': `Bearer ${accessToken}`,
                     'Content-Type': 'application/json',
@@ -44,7 +44,7 @@ const LikedPlaylist = () => {
 
         const options = {
             method: 'DELETE',
-            url: `http://localhost:5000/my-fav`,
+            url: `/my-fav`,
             headers: {
                 'Authorization': `Bearer ${accessToken}`,
                 'Content-Type': 'application/json',

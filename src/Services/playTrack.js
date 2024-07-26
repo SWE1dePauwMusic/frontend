@@ -2,6 +2,7 @@
 
 
 import makeRequest from "../utils/request";
+import {getTokenHandler} from "../utils/tokenHandling";
 
 async function reqPlayTrackWithId(accessToken, deviceId, trackUris){
     //use makeRequest
@@ -26,6 +27,19 @@ async function reqPlayTrackWithId(accessToken, deviceId, trackUris){
     }
 }
 
+async function reqPlayPlaylistWithId(accessToken, deviceId, playlistUri) {
+    // const accessToken = getTokenHandler("accessToken");
+    // const deviceId = localStorage.getItem("deviceId");
+    await fetch(`https://api.spotify.com/v1/me/player/play?device_id=${deviceId}`, {
+        method: 'PUT',
+        headers: {
+            'Authorization': `Bearer ${accessToken}`,
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            context_uri: `spotify:playlist:${playlistUri}`,
+        }),
+    }).catch(error => console.error('Error playing playlist:', error));
+}
 
-
-export {reqPlayTrackWithId};
+export {reqPlayTrackWithId, reqPlayPlaylistWithId};

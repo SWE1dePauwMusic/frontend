@@ -1,5 +1,6 @@
 const CustomError = require('./errorHandling'); // Ensure the path to CustomError is
 
+const BASE_URL = process.env.BASE_URL || 'http://localhost:5005';
 
 async function makeRequest(options) {
     const { method, url, headers, body, params } = options;
@@ -12,10 +13,10 @@ async function makeRequest(options) {
     };
 
     // Append query parameters to the URL if they exist
-    let requestUrl = url;
+    let requestUrl = `${BASE_URL}${url}`;
     if (params) {
         const queryString = buildQueryString(params);
-        requestUrl = `${url}?${queryString}`;
+        requestUrl = `${requestUrl}?${queryString}`;
     }
 
     try {

@@ -13,7 +13,7 @@ const TopTrack = () => {
 
             const options = {
                 method: 'GET',
-                url: `http://localhost:5000/top-tracks`,
+                url: `/top-tracks`,
                 headers: {
                     'Authorization': `Bearer ${accessToken}`,
                     'Content-Type': 'application/json',
@@ -42,7 +42,7 @@ const TopTrack = () => {
 
             const options = {
                 method: 'GET',
-                url: `http://localhost:5000/top-tracks`,
+                url: `/top-tracks`,
                 headers: {
                     'Authorization': `Bearer ${accessToken}`,
                     'Content-Type': 'application/json',
@@ -57,7 +57,7 @@ const TopTrack = () => {
 
             const options2 = {
                 method: 'GET',
-                url: `http://localhost:5000/recommendations`,
+                url: `/recommendations`,
                 headers: {
                     'Authorization': `Bearer ${accessToken}`,
                     'Content-Type': 'application/json',

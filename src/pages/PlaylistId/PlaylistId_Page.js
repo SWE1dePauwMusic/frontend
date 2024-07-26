@@ -16,7 +16,7 @@ const PlaylistWithId = () => {
                 const accessToken = getTokenHandler("accessToken");
                 const options = {
                     method: "GET",
-                    url: `http://localhost:5000/get-playlist`,
+                    url: `/get-playlist`,
                     headers: {
                         Authorization: `Bearer ${accessToken}`,
                         "Content-Type": "application/json",
