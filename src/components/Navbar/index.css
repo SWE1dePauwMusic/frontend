@@ -1,0 +1,149 @@
+/* Navbar Styles */
+.navbar-container {
+    height: 60px;
+    font-size: 18px;
+    width: 100%;
+    background-color: #FFFFFF; /* White background for a clean look */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Light shadow for subtle depth */
+    padding: 0 20px;
+    z-index: 1000; /* Ensure the navbar is above other elements */
+    position: fixed;
+}
+
+.navbar-container .nav-link.active {
+    color: #5D9CEC; /* Pastel blue for active links */
+    border-bottom: 2px solid #5D9CEC; /* Add underline effect for active link */
+}
+
+.navbar-container .nav-link {
+    color: #2B2B2B; /* Softer dark grey for links */
+    margin: 0 10px;
+    text-decoration: none;
+    position: relative; /* Position relative for hover effect */
+    padding: 5px 0;
+    transition: color 0.3s ease, background-color 0.3s ease; /* Smooth color transition */
+}
+
+.navbar-container .nav-link::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #5D9CEC; /* Pastel blue underline */
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out;
+}
+
+.navbar-container .nav-link:hover::before {
+    visibility: visible;
+    transform: scaleX(1);
+}
+
+.navbar-container .nav-link:hover {
+    color: #5D9CEC; /* Change text color on hover */
+    background-color: #F2F2FF; /* Light pastel purple background on hover */
+    border-radius: 5px; /* Rounded corners on hover */
+    padding: 5px 10px; /* Add padding on hover */
+}
+
+.brand-name {
+    color: #5D9CEC; /* Pastel blue for brand name */
+    font-size: 24px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    margin: 0;
+}
+
+.search-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+    background-color: #F2F2FF; /* Light pastel purple */
+    border-radius: 20px;
+    padding: 5px 10px;
+    margin-right: 20px;
+}
+
+.search-input {
+    background-color: transparent;
+    width: 200px;
+    height: 30px;
+    border: none;
+    padding: 0 10px;
+    outline: none;
+    color: #2B2B2B; /* Softer dark grey for text */
+}
+
+.search-icon {
+    font-size: 20px;
+    color: #5D9CEC; /* Pastel blue for icon */
+    cursor: pointer;
+}
+
+.toggle-user-dropdown {
+    color: transparent;
+    margin-right: 30px;
+}
+
+.user-image-container {
+    width: 30px;
+    height: 30px;
+    border: 2px solid #5D9CEC; /* Pastel blue for border */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #F2F2FF; /* Light pastel purple */
+}
+
+.user-image {
+    font-size: 20px;
+    color: #2B2B2B; /* Softer dark grey for icon */
+    cursor: pointer;
+}
+
+/* Sidebar Styles */
+.sidebar-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 250px;
+    background-color: #F2F2FF; /* Light pastel purple */
+    padding-top: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Light shadow for subtle depth */
+}
+
+.menu-item {
+    color: #2B2B2B; /* Softer dark grey */
+    background-color: #FFFFFF; /* White background for menu items */
+    padding: 15px 20px;
+    margin: 10px 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.menu-item:hover {
+    background-color: #DAE2F8; /* Light pastel blue */
+}
+
+.menu-item .sidebar-icon {
+    font-size: 22px;
+    color: #5D9CEC; /* Pastel blue */
+    margin-right: 10px;
+}
+
+.menu-item .menu-text {
+    flex-grow: 1;
+    color: #2B2B2B; /* Softer dark grey */
+}

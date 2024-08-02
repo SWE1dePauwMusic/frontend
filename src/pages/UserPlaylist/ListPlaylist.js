@@ -45,9 +45,9 @@ const UserPlaylists = () => {
             <div className="playlists">
                 {playlists.map((playlist) => (
                     <div key={playlist.id} className="playlist">
-                        {playlist.images && playlist.images.url && (
+                        {playlist.image && playlist.image.url && (
                             <img
-                                src={playlist.images.url}
+                                src={playlist.image.url}
                                 alt={playlist.name}
                                 className="playlistImage"
                                 style={{ width: '170px', height: '170px' }}
@@ -55,13 +55,13 @@ const UserPlaylists = () => {
                         )}
                         <div className="playlistInfo">
                             <h2 className="playlistName">
-                                <Link to={`/main/playlist/${playlist.id}`} className="playlistName">
+                                <Link to={`/main/playlist/${playlist.spotifyId}`} className="playlistName">
                                     {playlist.name}
                                 </Link>
                             </h2>
                             <h4 className="playlistOwner">Owner:
-                                <Link to={`/main/user/${playlist.owner.id}`} className="playlistOwner">
-                                    { playlist.owner.name}
+                                <Link to={`/main/user/${playlist.owner.spotifyId}`} className="playlistOwner">
+                                    { playlist.owner.display_name}
                                 </Link>
                             </h4>
                             <button className="playButton"

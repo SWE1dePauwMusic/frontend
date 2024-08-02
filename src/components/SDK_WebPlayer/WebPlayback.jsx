@@ -36,59 +36,103 @@ function WebPlayback() {
     };
     //Only use to first render the page
     useEffect(() => {
-        console.log("Trigger useEff 1", is_paused, is_active, current_track)
-        let script = document.createElement("script");
-        script.src = "https://sdk.scdn.co/spotify-player.js";
-        script.async = true;
-        document.body.appendChild(script);
-
-        window.onSpotifyWebPlaybackSDKReady = async () => {
-            const player = new window.Spotify.Player({
-                name: deviceName,
-                getOAuthToken: cb => { cb(token); },
-                volume: 0.7
-            });
-            setPlayer(player);
-
-            player.addListener('not_ready', ({ device_id }) => {
-                console.log('Device ID has gone offline', device_id);
-            });
-
-            player.addListener('player_state_changed', ( state => {
-
-                setTrack(state.track_window.current_track);
-                setPaused(state.paused);
-            }));
-
-            player.connect().then(success => {
-                if (success) {
-                    console.log("successfully connected to Spotify player");
-                    // Wait for 5 seconds (5000 milliseconds) before switch device
-                    setTimeout(() => {
-                        switchDevice(token, deviceName).then(() => {
-                            console.log('Device switched successfully');
-                            setActive(true); // Update active state after switching device
-                        }).catch(error => {
-                            console.error('Error switching device:', error);
-                            throw new Error(error);
-                        });
-                    }, 5000);
+        // Load Spotify Web Playback SDK script
+        const loadSpotifySDK = () => {
+            return new Promise((resolve) => {
+                const existingScript = document.getElementById('spotify-sdk');
+                if (!existingScript) {
+                    const script = document.createElement('script');
+                    script.id = 'spotify-sdk';
+                    script.src = 'https://sdk.scdn.co/spotify-player.js';
+                    script.async = true;
+                    script.onload = resolve;
+                    document.body.appendChild(script);
                 } else {
-                    console.log("unable to connect to Spotify Player");
-                    // Reload window
-                    window.location.reload();
+                    resolve();
                 }
             });
-
-            //Change Token
-            const intervalId = setInterval(async () => {
-                await setToken(getTokenHandler('accessToken'));
-            }, 900000); // Refresh token every 15 minutes (900000 milliseconds)
-
-            return () => clearInterval(intervalId);
         };
 
-    }, []);
+        const initSpotifyPlayer = async () => {
+            loadSpotifySDK();
+
+            window.onSpotifyWebPlaybackSDKReady = () => {
+                const player = new window.Spotify.Player({
+                    name: deviceName,
+                    getOAuthToken: cb => {
+                        cb(token);
+                    },
+                    volume: 0.5
+                });
+                setPlayer(player);
+
+                //Add listener to player
+                player.addListener('initialization_error', ({message}) => {
+                    console.error('Failed to initialize', message);
+                });
+
+                player.addListener('authentication_error', ({message}) => {
+                    console.error('Failed to authenticate', message);
+                });
+
+                player.addListener('account_error', ({message}) => {
+                    console.error('Failed to validate Spotify account', message);
+                });
+
+                player.addListener('playback_error', ({message}) => {
+                    console.error('Failed to perform playback', message);
+                });
+
+                player.addListener('ready', ({device_id}) => {
+                    console.log('Ready with Device ID', device_id);
+                });
+
+                player.addListener('not_ready', ({device_id}) => {
+                    console.log('Device ID has gone offline', device_id);
+                });
+
+                player.addListener('player_state_changed', (state) => {
+                    if (state) {
+                        setTrack(state.track_window.current_track);
+                        setPaused(state.paused);
+                    }
+                });
+
+                // Connect to the player!
+                player.connect().then(success => {
+                    if (success) {
+                        console.log('Successfully connected to Spotify player');
+                        setTimeout(() => {
+                            switchDevice(token, deviceName).then(() => {
+                                console.log('Device switched successfully');
+                                setActive(true);
+                            }).catch(error => {
+                                console.error('Error switching device:', error);
+                            });
+                        }, 3000);
+                    } else {
+                        console.error('Unable to connect to Spotify Player');
+                        window.location.reload();
+                    }
+                });
+            }
+        }
+        initSpotifyPlayer();
+
+        //Change Token
+        const intervalId = setInterval(async () => {
+            await setToken(getTokenHandler('accessToken'));
+        }, 900000); // Refresh token every 15 minutes (900000 milliseconds)
+
+
+        return () => {
+            if (player) {
+                player.disconnect();
+            }
+            clearInterval(intervalId);
+        }
+    }, [token, deviceName, switchDevice]);
+
 
 
     // Effect to update player's token when it changes

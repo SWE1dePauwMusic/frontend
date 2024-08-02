@@ -49,11 +49,11 @@ const TopTrack = () => {
                 },
                 params: {
                     'limit':5,
-                    'time_range':'medium_term',
+                    'time_range':'short_term',
                 }
             }
             const response = await makeRequest(options);
-            const listId = response.data.playlistInfo.trackList.map((item) => item.id);
+            const listId = response.data.playlistInfo.trackList.map((item) => item.spotifyId);
 
             const options2 = {
                 method: 'GET',

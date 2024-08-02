@@ -1,32 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+body, html {
+    font-family: 'Quicksand', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: 100%;
+    overflow: hidden; /* Prevent the body from scrolling */
+}
+
 .base-layout {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
-    position: relative;
+    height: 100vh;
+    width: 100%;
 }
 
-.main-content {
+.navbar {
+    width: 100%;
+    background-color: #fff; /* Adjust as needed */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Optional: Add shadow */
+    z-index: 1000; /* Ensure it stays above other elements */
+    position: fixed; /* Make the navbar fixed */
+    top: 0;
+    left: 0;
+}
+
+.main-layout {
     display: flex;
     flex: 1;
+    /*padding-top: 70px; !* Add top padding equal to the height of the navbar *!*/
 }
 
 .sidebar {
     width: 250px; /* Adjust the width as needed */
     background-color: #f4f4f4; /* Optional: Background color for the sidebar */
+    flex-shrink: 0; /* Prevent the sidebar from shrinking */
+    height: calc(100vh - 70px); /* Adjust the height considering the navbar */
+    overflow-y: auto; /* Enable vertical scrolling if needed */
+    position: fixed; /* Make the sidebar fixed */
+    top: 70px; /* Position it below the navbar */
+    left: 0;
 }
 
-.page-content {
+.content-wrapper {
     flex: 1;
-    padding: 20px; /* Optional: Padding for the content area */
+    margin-left: 250px; /* Add margin to the left equal to the width of the sidebar */
+    /*padding: 20px; !* Optional: Add padding for content area *!*/
+    overflow-y: auto; /* Enable vertical scrolling for the content area */
+    height: calc(100vh - 70px); /* Adjust height considering the navbar */
+
+    padding-bottom: 200px; /* Ensure there's space for the playback bar */
+
+
+}
+
+.web-playback {
+    /*position: fixed;*/
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Ensure it's on top of other elements */
+    /*background-color: #fff; !* Optional: Set a background color *!*/
+    /*box-shadow: 0 -2px 5px rgba(0,0,0,0.1); !* Optional: Add a shadow for better visibility *!*/
+    /*padding: 5px; !* Optional: Add padding *!*/
 }
 
 .web-playback {
     position: fixed;
     bottom: 0;
-    left: 0;
-    width: 100%;
+    left: 250px; /* Align with the content area */
+    width: calc(90% - 250px); /* Subtract the sidebar width */
     z-index: 1000; /* Ensure it's on top of other elements */
-    background-color: #fff; /* Optional: Set a background color */
-    box-shadow: 0 -2px 5px rgba(0,0,0,0.1); /* Optional: Add a shadow for better visibility */
+    /*background-color: #fff; !* Optional: Set a background color *!*/
+    /*box-shadow: 0 -2px 5px rgba(0,0,0,0.1); !* Optional: Add a shadow for better visibility *!*/
     padding: 10px; /* Optional: Add padding */
 }

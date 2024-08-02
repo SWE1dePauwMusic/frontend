@@ -1,0 +1,72 @@
+.track {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    padding: 15px 15px;
+    /*border-bottom: 1px solid #ddd;*/
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 8px;
+    /*margin-bottom: 10px;*/
+    /*background-color: #ffffff; !* White background for song cards *!*/
+    /*box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); !* Subtle shadow for depth *!*/
+    /*height: 70px;*/
+}
+
+.track-number {
+    width: 20px;
+    text-align: center;
+    margin: 10px;
+    color: #2b2b2b; /* Softer dark grey */
+}
+
+.track-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+    margin-right: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for image depth */
+}
+
+.track-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.track-name {
+    font-size: 16px;
+    font-weight: bold;
+    color: #5d9cec; /* Pastel blue */
+    margin-right: 4px;
+}
+
+.track-artists {
+    font-size: 14px;
+    color: #777; /* Softer dark grey */
+}
+
+.track-duration {
+    font-size: 14px;
+    color: #999; /* Light grey */
+    margin-right: 10px;
+}
+
+.play-button, .remove-button {
+    margin-left: 10px;
+    padding: 5px 10px;
+    font-size: 14px;
+    cursor: pointer;
+    border: none;
+    border-radius: 20px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+.remove-button {
+    background-color: #ff6b6b; /* Light red */
+    color: #fff; /* White text */
+    margin: 10px;
+}
+
+.remove-button:hover {
+    background-color: #ff5252; /* Darker red on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+}

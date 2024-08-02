@@ -1,18 +1,21 @@
 .spotify-player-wrapper {
-    /*display: flex;*/
+    display: flex;
     justify-content: center;
-    /*align-items: center;*/
-    /*min-height: 100vh;*/
-    font-family: 'Arial', sans-serif;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+
+    font-family: inherit;
 }
 
 .spotify-player-container {
     display: flex;
     align-items: center;
-    background-color: rgba(0,0,0,0.9);
+    background-color: #f2f2ff; /* Light pastel purple */
     padding: 20px;
     border-radius: 15px;
-    max-width: 900px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    max-width: 1600px;
     width: 100%;
 }
 
@@ -21,6 +24,7 @@
     height: 90px;
     border-radius: 10px;
     margin-right: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for image depth */
 }
 
 .now-playing-info {
@@ -34,15 +38,15 @@
 }
 
 .now-playing-name {
-    font-size: 18px;
+    font-size: 24px;
     font-weight: bold;
     margin-right: 10px;
-    color: white;
+    color: #5d9cec; /* Pastel blue */
 }
 
 .now-playing-artist {
     font-size: 14px;
-    color: #b3b3b3;
+    color: #777; /* Softer dark grey */
 }
 
 .spotify-controls {
@@ -55,57 +59,77 @@
 .control-button {
     background: none;
     border: none;
-    color: white;
+    color: #2b2b2b; /* Softer dark grey */
     font-size: 20px;
     cursor: pointer;
     margin: 0 10px;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .control-button:hover {
-    color: #ffbf00;
+    color: #5d9cec; /* Pastel blue on hover */
+    transform: scale(1.1); /* Slightly enlarge on hover */
 }
 
-.progress-bar {
+.progress-bar-wrapper {
     display: flex;
     align-items: center;
+    width: 80%; /* Ensure it uses the full width */
+    margin-top: 10px;
 }
 
 .current-time, .total-time {
     font-size: 12px;
     margin: 0 10px;
+    color: #2b2b2b; /* Softer dark grey */
+    white-space: nowrap; /* Prevent line break */
+}
+
+.progress-container {
+    flex: 1; /* Take up remaining space */
+    display: flex;
+    align-items: center;
 }
 
 .progress {
-    flex: 1;
-    height: 4px;
-    background-color: #535353;
-    border-radius: 2px;
+    width: 100%;
+    height: 8px; /* Height of the progress bar */
+    background-color: #ddd; /* Light grey background */
+    border-radius: 4px;
     overflow: hidden;
+    position: relative;
 }
 
 .progress-filled {
     height: 100%;
-    background-color: #ffbf00;
-    border-radius: 2px;
+    background-color: #5d9cec; /* Pastel blue */
+    width: 0; /* Set initial width to 0 or a specific percentage */
+    border-radius: 4px;
+    transition: width 0.3s ease; /* Smooth transition for progress */
+    position: absolute; /* Absolutely positioned inside the progress bar */
+    top: 0;
+    left: 0;
 }
 
+
+
 .volume-control {
-    display: flex;
     align-items: center;
+    position: relative;
     margin-top: 10px;
 }
 
 .volume-control label {
     margin-right: 10px;
     font-size: 16px;
-    color: #ffbf00; /* Match the color */
+    color: #2b2b2b; /* Softer dark grey */
 }
 
 .volume-control input[type="range"] {
     -webkit-appearance: none;
-    width: 60px;
+    width: 100px; /* Increase width for better control */
     height: 5px;
-    background: #404040;
+    background: #ddd; /* Light grey */
     border-radius: 5px;
     outline: none;
     transition: background 0.3s;
@@ -115,16 +139,16 @@
     -webkit-appearance: none;
     width: 10px;
     height: 10px;
-    background: #ffbf00; /* Match the color */
+    background: #5d9cec; /* Pastel blue */
     border-radius: 50%;
     cursor: pointer;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
 
 .volume-control input[type="range"]::-moz-range-thumb {
-    width: 100px;
+    width: 10px;
     height: 10px;
-    background: #ffbf00; /* Match the color */
+    background: #5d9cec; /* Pastel blue */
     border-radius: 50%;
     cursor: pointer;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);

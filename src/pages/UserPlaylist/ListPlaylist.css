@@ -1,4 +1,4 @@
-/* PlaylistStyles.css */
+/* ListPlaylist.css */
 .playlists {
     display: flex;
     flex-wrap: wrap;
@@ -14,17 +14,25 @@
     margin: 20px;
     padding: 20px;
     border: 1px solid #ddd;
-    border-radius: 8px;
+    border-radius: 12px; /* Increased border radius for a softer look */
     width: 250px;
-    background-color: #fff;
-    color: #000;
+    background-color: #f2f2ff; /* Light pastel purple */
+    color: #2b2b2b; /* Softer dark grey */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.playlist:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
 }
 
 .playlistImage {
     width: 100%;
     height: auto;
-    border-radius: 8px;
+    border-radius: 12px; /* Increased border radius for a softer look */
     margin-bottom: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for image depth */
 }
 
 .playlistInfo {
@@ -34,19 +42,25 @@
 .playlistName {
     font-size: 18px;
     margin: 10px 0;
-    color: #333;
+    color: #5d9cec; /* Pastel blue */
     text-decoration: none; /* Overrides default link styling */
     cursor: pointer;
 }
 
 .playlistName:hover {
-    color: #1DB954;
+    color: #4a8bd4; /* Darker pastel blue on hover */
+}
+
+.playlistOwner {
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: #777; /* Softer dark grey */
 }
 
 .trackNumber {
     font-size: 14px;
     margin-bottom: 10px;
-    color: #777;
+    color: #777; /* Softer dark grey */
 }
 
 .playButton {
@@ -54,11 +68,30 @@
     font-size: 14px;
     cursor: pointer;
     border: none;
-    border-radius: 4px;
-    background-color: #1DB954;
-    color: #fff;
+    border-radius: 20px; /* Rounded corners for a softer look */
+    background-color: #5d9cec; /* Pastel blue */
+    color: #fff; /* White text */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .playButton:hover {
-    background-color: #1ed760;
+    background-color: #4a8bd4; /* Darker pastel blue on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+}
+
+.backButton {
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    border: none;
+    border-radius: 20px; /* Rounded corners for a softer look */
+    background-color: #5d9cec; /* Pastel blue */
+    color: #fff; /* White text */
+    margin: 20px; /* Add margin to the back button */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.backButton:hover {
+    background-color: #4a8bd4; /* Darker pastel blue on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
 }
