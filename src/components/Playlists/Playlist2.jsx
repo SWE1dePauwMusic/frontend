@@ -6,8 +6,10 @@ import { getTokenHandler } from "../../utils/tokenHandling";
 import './Playlist.css';
 
 const Playlist = ({ playlistResponse, playlistId, removeTrack }) => {
+    console.log("Playlist", playlistResponse)
     const playlist = playlistResponse.data.playlistInfo;
-    const listId = playlist.trackList.map((item) => item.spotifyId);
+    const trackLists = playlist.trackList.filter(item => item.spotifyId !== null)
+    const listId = trackLists.map((item) => item.spotifyId);
 
     function shuffleArray(array) {
         let currentIndex = array.length, randomIndex;
@@ -46,7 +48,7 @@ const Playlist = ({ playlistResponse, playlistId, removeTrack }) => {
                 </div>
             </div>
             <div className="playlist-tracks">
-                {playlist.trackList.map((track, index) => (
+                {trackLists.map((track, index) => (
                     <div className="track-container">
                         <SongCard track={track} index={index} removeTrack={removeTrack} playlistId={playlistId} />
                         <button className="playlist-play-button" onClick={() =>

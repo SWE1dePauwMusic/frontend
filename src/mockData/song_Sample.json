@@ -1,0 +1,34 @@
+{
+  "spotifyId": "0eWfMAzRPFZGtkmIB2KpJ2",
+  "name": "Đừng Đi",
+  "artists": [
+    {
+      "spotifyId": "1fQjpmcx8iNIy1gKRelTD2",
+      "name": "The Cassette"
+    }
+  ],
+  "album": {
+    "spotifyId": "3Q4TNeqYmFXNPItKvzYi8Z",
+    "name": "Từ Vực Thẳm Đến Rìa Ánh Sáng",
+    "artists": [
+      {
+        "spotifyId": "1fQjpmcx8iNIy1gKRelTD2",
+        "name": "The Cassette"
+      }
+    ],
+    "image": {
+      "height": 640,
+      "url": "https://i.scdn.co/image/ab67616d0000b2739705cff862a2db76dcb36861",
+      "width": 640
+    },
+    "albumType": "ALBUM",
+    "releaseDate": "2024-04-25"
+  },
+  "duration": 335571,
+  "image": {
+    "height": 640,
+    "url": "https://i.scdn.co/image/ab67616d0000b2739705cff862a2db76dcb36861",
+    "width": 640
+  },
+  "popularity": 37
+},

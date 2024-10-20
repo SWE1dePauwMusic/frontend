@@ -45,7 +45,7 @@ body, html {
 
 .content-wrapper {
     flex: 1;
-    margin-left: 250px; /* Add margin to the left equal to the width of the sidebar */
+    margin-left: 0px; /* Add margin to the left equal to the width of the sidebar */
     /*padding: 20px; !* Optional: Add padding for content area *!*/
     overflow-y: auto; /* Enable vertical scrolling for the content area */
     height: calc(100vh - 70px); /* Adjust height considering the navbar */
@@ -70,7 +70,7 @@ body, html {
     position: fixed;
     bottom: 0;
     left: 250px; /* Align with the content area */
-    width: calc(90% - 250px); /* Subtract the sidebar width */
+    width: calc(90% - 270px); /* Subtract the sidebar width */
     z-index: 1000; /* Ensure it's on top of other elements */
     /*background-color: #fff; !* Optional: Set a background color *!*/
     /*box-shadow: 0 -2px 5px rgba(0,0,0,0.1); !* Optional: Add a shadow for better visibility *!*/

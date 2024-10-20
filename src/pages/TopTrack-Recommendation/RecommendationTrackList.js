@@ -3,33 +3,27 @@ import makeRequest from "../../utils/request";
 import Playlist from "../../components/Playlists/Playlist2";
 import {getTokenHandler} from "../../utils/tokenHandling";
 import {useNavigate} from "react-router-dom";
-import {handleToptrack} from "../../Services/managePlaylist";
+import {handleRecommendationWithTopTrack, handleToptrack} from "../../Services/managePlaylist";
 
 const TopTrack = () => {
     const [playlist, setPlayListReady] = useState(null);
     const navigate = useNavigate();
 
-
-
-    // useEffect(async () => {
-    //     handlePlaylistChange("short_term")
-    // }, []);
-    const handlePlaylistChange = async (timeRange) => {
-         setPlayListReady(await handleToptrack(timeRange))
-    }
-
-
+    useEffect(() => {
+        let recTracks = handleRecommendationWithTopTrack();
+        setPlayListReady(recTracks);
+    }, []);
     return (
         <>
             <button onClick={() => navigate('/main')}>Back</button>
 
-            <button style={styles.playButton} onClick={() => handlePlaylistChange("short_term")}>
+            <button style={styles.playButton} onClick={() => handleToptrack("short_term")}>
                 Short-Term (4 weeks)
             </button>
-            <button style={styles.playButton} onClick={()=>handlePlaylistChange("medium_term")}>
+            <button style={styles.playButton} onClick={()=>handleToptrack("medium_term")}>
                 Medium-Term (6 months)
             </button>
-            <button style={styles.playButton} onClick={() => handlePlaylistChange("long_term")}>
+            <button style={styles.playButton} onClick={() => handleToptrack("long_term")}>
                 Long-Term (all time)
             </button>
             {/*<button style={styles.playButton} onClick={handleRecommendationWithTopTrack}>*/}
